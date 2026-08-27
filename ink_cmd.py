@@ -1,4 +1,6 @@
 import sys
+from input_verify import verify
+from colours import get_colour_by_code
 
 def get_args():
     if len(sys.argv) != 4:
@@ -7,7 +9,12 @@ def get_args():
     prompt = sys.argv[1]
     dimension = sys.argv[2]
     code = sys.argv[3]
-    return prompt, dimension, code
+    colors = get_colour_by_code(code)
+    return prompt, dimension, code, colors
 
-prompt, dimension, code = get_args()
-print(prompt, dimension, code)
+
+if __name__ == "__main__":
+    prompt, dimension, code , colors = get_args()
+    print(verify(prompt, dimension, code))##
+    print(type(colors))
+

@@ -11,3 +11,18 @@ colour_code = {
     "a000009": ['#DF301C', '#FF9100', '#FFF1D1', '#00B7CD'],
     "a000010": ['#FFF4BF', '#FFBEFB', '#DC95FF', '#8C56D4'],
 }
+
+def help_colors():
+    for code,color in colour_code.items():
+        print(f"{code} : {color}")
+
+def get_colour_by_code(code):
+    if code in colour_code:
+        return str(colour_code[code])
+    else:
+        return"no colour specified"
+
+if __name__ == "__main__":
+    help_colors()
+    print(get_colour_by_code("i000001"))
+    print(type(get_colour_by_code("i000001")))
